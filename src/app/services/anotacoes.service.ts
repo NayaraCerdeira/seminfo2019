@@ -37,4 +37,11 @@ export class AnotacoesService {
     this.setAnotacoes();
   }
 
+  delAnotacao(nota){
+    this.anotacoes.splice(nota, 1);
+    this.setAnotacoes();
+
+}
+
+
 }

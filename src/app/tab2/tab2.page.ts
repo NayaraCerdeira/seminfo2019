@@ -18,8 +18,8 @@ export class Tab2Page {
 
   constructor(
     private alertController: AlertController,
-    private noteService: AnotacoesService,
-    private topService: TopicosService,
+    public noteService: AnotacoesService,
+    public topService: TopicosService,
     private cam: Camera) {}
 
   addNota() {
@@ -27,6 +27,15 @@ export class Tab2Page {
     this.topService.topicos.filter((item, index, arr) => item.ativado).map(({nome}) => nome));
     this.noteService.addAnotacao(this.newTitulo, this.newNota, 
       this.topService.topicos.filter((item, index, arr) => item.ativado).map(({nome}) => nome));
+  }
+
+  delAnotacoes(nota){
+    console.log('apagaar', nota,
+    this.noteService.delAnotacao(nota));
+  }
+
+  compartilhar(nota){
+    console.log('compartilhar', nota) 
   }
 
   capturar() {

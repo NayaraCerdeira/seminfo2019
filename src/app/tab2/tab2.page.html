@@ -18,6 +18,14 @@
     <ion-chip *ngFor="let tag of nota.tags">
       <ion-label>{{tag}}</ion-label>
     </ion-chip>
+    <ion-button clear (click) = "delAnotacoes(nota)">
+      <ion-icon name = "trash"></ion-icon>
+    </ion-button>
+    <ion-buttons end (click)="compartilhar(nota.anotacao, nota.titulo)">
+      <button ion-button name = "share">
+        <ion-icon ios="ios-more" md="md-more"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-card>
   <!-- <ion-card class="image-card">    
     <ion-card-header>
